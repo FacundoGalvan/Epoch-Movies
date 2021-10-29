@@ -1,0 +1,495 @@
+// IMPORTS
+
+@import "colores";
+
+//CLASES GENERALES
+
+:root {
+    --body-bg: black;
+    --text-color: white;
+    --nav-height: 60px;
+    --space-top: 30px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+img {
+    max-width: 100%;
+}
+
+.main-color {
+    color:#c0392b;
+}
+
+.section {
+    padding-top: 80px;
+}
+.container {
+    max-width: 1920px;
+    padding: 0 40px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.linefortext{
+    border-bottom: 2px solid $colorSecundario;
+}
+
+.colortexto{
+    color: $colorTerciario;
+}
+
+.colortextoblack{
+    color: $colorPrimario;
+}
+
+.colortextored{
+    color: $colorSecundario;
+}
+
+//FIN CLASES GENERALES
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+//BARRA DE NAVEGACION
+
+.nav-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+
+    .containernav {
+        max-width: 1920px;
+        padding: 0 40px;
+        margin: auto;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        height: 60px;
+
+        a {
+            color: white;
+        }
+        .logonav {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        
+        .nav-menu {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+
+            li ~ li {
+                margin-left: 30px;
+            }
+
+            a {
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            
+            a:hover {
+                color:#c0392b;
+            }
+            
+            a.btn:hover,
+            a.logo:hover,
+            a.movie-item:hover {
+                color: unset;
+            }
+            
+            .btn {
+                color: #ffffff;
+                padding: 0.25rem 1.5rem;
+                text-transform: uppercase;
+                font-size: 1.25rem;
+                font-weight: 700;
+                display: inline-flex;
+                position: relative;
+                align-items: center;
+            }
+            
+            .btn-hover::before {
+                z-index: 1;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background-color: #c0392b;
+                transition: 0.3s ease-in-out;
+            }
+            
+            .btn-hover:hover::before {
+                width: 100%;
+            }
+            
+            .btn i,
+            .btn span {
+                z-index: 1;
+            }
+            
+            .btn i {
+                margin-right: 1rem;
+            }
+        }
+        
+    }
+}
+
+//MENU HAMBURGUESA 
+
+.hamburger-menu {
+    --size: 30px;
+    height: var(--size);
+    width: var(--size);
+    cursor: pointer;
+    z-index: 101;
+    position: relative;
+    display: none;
+    align-items: center;
+}
+
+.hamburger {
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    width: var(--size);
+    height: 3px;
+    border-radius: 0.5rem;
+    background-color: var(--text-color);
+    transition: 0.4s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -10px;
+}
+
+.hamburger::after {
+    bottom: -10px;
+}
+
+.hamburger-menu.active .hamburger {
+    background-color: transparent;
+}
+
+.hamburger-menu.active .hamburger::before {
+    transform-origin: top left;
+    transform: rotate(45deg);
+    left: 6px;
+}
+
+.hamburger-menu.active .hamburger::after {
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    left: 6px;
+}
+
+//FIN MENU HAMBURGUESA
+
+
+//FIN BARRA DE NAVEGACION 
+
+
+
+
+
+
+
+//-----CARRUSEL PRINCIPAL
+
+.home .carousel-item{
+	min-height: 100vh;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+}
+
+.home .carousel-item:before{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: -1;
+}
+.home .carousel-item .container{
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	text-align: center;
+}
+.home .carousel-item h2{
+	font-size: 80px;
+	color: $colorTerciario;
+	margin:0 0 10px;
+	opacity: 0;
+}
+.home .carousel-item p{
+	font-size: 25px;
+	margin:0;
+	color: $colorTerciario;
+	opacity:0;
+}
+.home .carousel-item.active h2{
+	animation: fadeInLeft 0.5s ease forwards;
+}
+.home .carousel-item.active p{
+	animation: fadeInRight 0.5s ease forwards;
+}
+
+@keyframes fadeInLeft{
+	0%{
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+@keyframes fadeInRight{
+	0%{
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.home .carousel-controls{
+	position: absolute;
+	left: 50%;
+	bottom: 40px;
+	z-index: 10;
+	transform: translateX(-50%);
+}
+
+.home .carousel-indicators{
+	position: relative;
+	margin:0;
+}
+
+.home .carousel-indicators li{
+	height: 70px;
+	width: 70px;
+	margin:0 5px;
+	background-position: center;
+	background-size: cover;
+	transition: all 0.3s ease;
+}
+.home .carousel-indicators li.active{
+	border-color: $colorTerciario;
+	transform: scale(1.2);
+}
+
+.home .carousel-control-next, 
+.home .carousel-control-prev{
+	height: 60px;
+	width: 60px;
+	opacity: 1;
+	z-index: 3;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+.home .carousel-control-next:hover, 
+.home .carousel-control-prev:hover{
+    box-shadow: 0 0 10px $colorTerciario;
+}
+.home .carousel-control-next img, 
+.home .carousel-control-prev img{
+    width: 30px;
+}
+.home .carousel-control-next{
+	right: -90px;
+}
+.home .carousel-control-prev{
+	left: -90px;
+}
+
+
+// RESPONSIVE 
+
+@media only screen and (max-width: 1280px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero-slide-item {
+        padding-top: 50%;
+    }
+
+    .item-content-wraper {
+        width: 50%;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .nav-wrapper {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        z-index: 99;}
+
+    .hero-slide-item {
+        height: max-content;
+        padding-top: unset;
+    }
+
+    .item-content-wraper {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 20px;
+        padding-right: 5rem;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-slide-item-content {
+        position: relative;
+    }
+
+    .hero-slide-item img {
+        height: 100%;
+    }
+
+    .item-content-title {
+        font-size: 3rem;
+    }
+
+    .hamburger-menu {
+        display: grid;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background-color: #000000;
+        flex-direction: column;
+        width: 80%;
+        height: 100vh;
+        padding: 20px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-menu li {
+        margin: 10px 30px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .home .carousel-control-next, 
+    .home .carousel-control-prev{
+        display: none;
+    }
+    .home .carousel-indicators li{
+        height: 50px;
+        width: 50px;
+    }
+    .home .carousel-item h2{
+        font-size: 45px;
+    }
+    .home .carousel-item p{
+        font-size: 22px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 576px) {
+   
+}
+
+
+@media(max-width: 414px){
+
+    .home .carousel-item{
+        min-height: 100vh;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        z-index: 1;
+    }
+    .home .carousel-control-next, 
+    .home .carousel-control-prev{
+        display: none;
+    }
+    .home .carousel-indicators li{
+        height: 30px;
+        width: 30px;
+    }
+    .home .carousel-item h2{
+        font-size: 35px;
+    }
+    .home .carousel-item p{
+        font-size: 12px;
+    }
+  }  
+
+
+@media only screen and (max-width: 390px) {
+
+
+}

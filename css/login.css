@@ -1,0 +1,258 @@
+:root {
+  --body-bg: black;
+  --text-color: white;
+  --nav-height: 60px;
+  --space-top: 30px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: black;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main-color {
+  color: #c0392b;
+}
+
+.section {
+  padding-top: 80px;
+}
+
+.container {
+  max-width: 1920px;
+  padding: 0 40px;
+  margin: auto;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.linefortext {
+  border-bottom: 2px solid #c0392b;
+}
+
+.colortexto {
+  color: white;
+}
+
+.colortextoblack {
+  color: black;
+}
+
+.colortextored {
+  color: #c0392b;
+}
+
+.nav-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.nav-wrapper .containernav {
+  max-width: 1920px;
+  padding: 0 40px;
+  margin: auto;
+}
+
+.nav-wrapper .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: black;
+  height: 60px;
+}
+
+.nav-wrapper .nav a {
+  color: black;
+}
+
+.nav-wrapper .nav .logonav {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.nav-wrapper .nav .nav-menu {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+}
+
+.nav-wrapper .nav .nav-menu li ~ li {
+  margin-left: 30px;
+}
+
+.nav-wrapper .nav .nav-menu a {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nav-wrapper .nav .nav-menu a:hover {
+  color: #c0392b;
+}
+
+.nav-wrapper .nav .nav-menu a.btn:hover,
+.nav-wrapper .nav .nav-menu a.logo:hover,
+.nav-wrapper .nav .nav-menu a.movie-item:hover {
+  color: unset;
+}
+
+.nav-wrapper .nav .nav-menu .btn {
+  color: #ffffff;
+  padding: 0.25rem 1.5rem;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-wrapper .nav .nav-menu .btn-hover::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #c0392b;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-wrapper .nav .nav-menu .btn-hover:hover::before {
+  width: 100%;
+}
+
+.nav-wrapper .nav .nav-menu .btn i,
+.nav-wrapper .nav .nav-menu .btn span {
+  z-index: 1;
+}
+
+.nav-wrapper .nav .nav-menu .btn i {
+  margin-right: 1rem;
+}
+
+.hamburger-menu {
+  --size: 30px;
+  height: var(--size);
+  width: var(--size);
+  cursor: pointer;
+  z-index: 101;
+  position: relative;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: var(--size);
+  height: 3px;
+  border-radius: 0.5rem;
+  background-color: var(--text-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -10px;
+}
+
+.hamburger::after {
+  bottom: -10px;
+}
+
+.hamburger-menu.active .hamburger {
+  background-color: transparent;
+}
+
+.hamburger-menu.active .hamburger::before {
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: 6px;
+}
+
+.hamburger-menu.active .hamburger::after {
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  left: 6px;
+}
+
+.bg {
+  background-image: url(../images/pcfondo.jpg);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btn-primary {
+  background-color: #c0392b;
+}
+
+.textofacebookgooglelogin {
+  color: black;
+  font-family: 'Rubik', sans-serif;
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 768px) {
+  .imgepochlog {
+    display: none;
+  }
+}
+/*# sourceMappingURL=login.css.map */

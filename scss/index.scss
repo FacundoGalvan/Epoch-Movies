@@ -1,0 +1,1161 @@
+// IMPORTS
+
+@import "colores";
+
+//CLASES GENERALES
+
+:root {
+    --body-bg: black;
+    --text-color: white;
+    --nav-height: 60px;
+    --space-top: 30px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+img {
+    max-width: 100%;
+}
+
+.main-color {
+    color:#c0392b;
+}
+
+.section {
+    padding-top: 80px;
+}
+.container {
+    max-width: 1920px;
+    padding: 0 40px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.linefortext{
+    border-bottom: 2px solid $colorSecundario;
+}
+
+.colortexto{
+    color: $colorTerciario;
+}
+
+.colortextoblack{
+    color: $colorPrimario;
+}
+
+.colortextored{
+    color: $colorSecundario;
+}
+
+//FIN CLASES GENERALES
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+//BARRA DE NAVEGACION
+
+.nav-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+
+    .containernav {
+        max-width: 1920px;
+        padding: 0 40px;
+        margin: auto;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        height: 60px;
+
+        a {
+            color: white;
+        }
+        .logonav {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        
+        .nav-menu {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+
+            li ~ li {
+                margin-left: 30px;
+            }
+
+            a {
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+            
+            a:hover {
+                color:#c0392b;
+            }
+            
+            a.btn:hover,
+            a.logo:hover,
+            a.movie-item:hover {
+                color: unset;
+            }
+            
+            .btn {
+                color: #ffffff;
+                padding: 0.25rem 1.5rem;
+                text-transform: uppercase;
+                font-size: 1.25rem;
+                font-weight: 700;
+                display: inline-flex;
+                position: relative;
+                align-items: center;
+            }
+            
+            .btn-hover::before {
+                z-index: 1;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background-color: #c0392b;
+                transition: 0.3s ease-in-out;
+            }
+            
+            .btn-hover:hover::before {
+                width: 100%;
+            }
+            
+            .btn i,
+            .btn span {
+                z-index: 1;
+            }
+            
+            .btn i {
+                margin-right: 1rem;
+            }
+        }
+        
+    }
+}
+
+//MENU HAMBURGUESA 
+
+.hamburger-menu {
+    --size: 30px;
+    height: var(--size);
+    width: var(--size);
+    cursor: pointer;
+    z-index: 101;
+    position: relative;
+    display: none;
+    align-items: center;
+}
+
+.hamburger {
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    width: var(--size);
+    height: 3px;
+    border-radius: 0.5rem;
+    background-color: var(--text-color);
+    transition: 0.4s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -10px;
+}
+
+.hamburger::after {
+    bottom: -10px;
+}
+
+.hamburger-menu.active .hamburger {
+    background-color: transparent;
+}
+
+.hamburger-menu.active .hamburger::before {
+    transform-origin: top left;
+    transform: rotate(45deg);
+    left: 6px;
+}
+
+.hamburger-menu.active .hamburger::after {
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    left: 6px;
+}
+
+//FIN MENU HAMBURGUESA
+
+
+//FIN BARRA DE NAVEGACION 
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+//VIDEO PRINCIPAL 
+
+
+main{
+    width: 100%;
+    max-width: 1900px;
+    
+    video{
+        width:100%;
+    }
+
+    div{
+        width: 100%;
+        max-width: 1700px;
+        position: relative;
+    }
+
+    h1{
+        position: absolute;
+        bottom: 40px;
+        width: 70%;
+        font-size: 11vh;
+        font-family: 'Rubik', sans-serif;
+
+}
+}
+
+//FIN VIDEO PRINCIPAL
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+// SECCION 1 HOME - TITULO "WE ARE MORE THAN A CONTENT"
+
+.sectionhome__div{
+    display: flex;
+    background-color: $colorPrimario;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+
+    .sectionhome__divp1{
+        color: $colorCuaternario;
+        font-size: 15px;
+    }
+
+    .sectionhome__divh2{
+        font-size: 62px;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    .sectionhome__divp2{
+        font-size: 18px;
+    }
+}
+
+// FIN SECCION 1 HOME - TITULO "WE ARE MORE THAN A CONTENT"
+
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+
+//SECCION 2 HOME - 4 IMAGENES CON EFECTO 
+
+.sectionhome2{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sectiomehome2__div{
+    width:100%;
+    max-width: 650px;
+    margin: 5px auto;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+
+    &::before, &:after {
+        content: "";
+        position: absolute;
+        width: calc(100% - 30px);
+        height: 4px;
+        background: $colorSecundario;
+        transition: all .3s;
+    }
+
+    &:before{left: -100%; top: 10px;} 
+    &:after{left: 100%; bottom: 10px;}
+
+    &:hover:before, &:hover:after {
+        left: 15px;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    .sectionehome2__div__div{
+        text-align: center;
+        position: absolute;
+        transition: all .3s;
+        transform: scale(1.5);
+        opacity: 0;
+
+        p{
+            font-size: 18x;
+            margin-left: 20px;
+            margin-bottom: 13px;
+        }
+    }
+    &:hover .sectionehome2__div__div{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+//FIN 4 IMAGENES CON EFECTO
+
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+
+//ELEGIR PLAN
+
+
+.pricing-header {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 10vh;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pricing-box {
+    padding: 50px;
+    margin: 15px 0;
+    background-color: #221f1f;
+    border-top: 5px solid transparent;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pricing-box:hover {
+    transform: translateY(-20px);
+}
+
+.pricing-box.hightlight {
+    border-top: 5px solid #c0392b;
+}
+
+.pricing-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.pricing-price {
+    font-weight: 700;
+}
+
+.pricing-price span {
+    font-size: 1rem;
+}
+
+.pricing-box-content {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 1.25rem;
+}
+
+.pricing-box-action {
+    text-align: center;
+    margin-top: 60px;
+
+    .btn {
+        color: #ffffff;
+        padding: 0.25rem 1.5rem;
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        font-weight: 700;
+        display: inline-flex;
+        position: relative;
+        align-items: center;
+    }
+    
+    .btn-hover::before {
+        z-index: 1;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: #c0392b;
+        transition: 0.3s ease-in-out;
+    }
+    
+    .btn-hover:hover::before {
+        width: 100%;
+    }
+    
+    .btn i,
+    .btn span {
+        z-index: 1;
+    }
+    
+    .btn i {
+        margin-right: 1rem;
+    }
+}
+
+//FIN ELEGIR PLAN
+
+
+
+//--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+//CARRUSELES DE PELICULAS Y SERIES
+
+.section-header {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-left: 4px solid #c0392b;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-nav-center {
+    position: relative;
+
+    .owl-nav button i {
+        font-size: 3rem;
+    }
+    
+    .owl-nav button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .owl-nav .owl-prev {
+        position: absolute;
+        left: 5px;
+    }
+    
+    .owl-nav .owl-next {
+        position: absolute;
+        right: 5px;
+    }
+}
+
+.movie-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding-top: 140%;
+    cursor: pointer;
+}
+
+.movie-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s linear;
+}
+
+.movie-item:hover img {
+    transform: scale(1.2);
+}
+
+.movie-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.movie-item-content::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.movie-item-title {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    position: relative;
+    font-weight: 700;
+}
+
+
+.movie-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding-top: 140%;
+    cursor: pointer;
+}
+
+.movie-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s linear;
+}
+
+.movie-item:hover img {
+    transform: scale(1.2);
+}
+
+.movie-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.movie-item-content::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+}
+
+.movie-item-title {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    position: relative;
+    font-weight: 700;
+}
+
+.owl-nav button {
+    border: none;
+    outline: none;
+}
+
+.owl-nav button i {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+}
+
+.owl-nav button:hover i {
+    color: $colorSecundario;
+}
+
+
+
+// FIN CARRUSELES DE PELICULAS Y SERIES
+
+
+//----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//SECCION 5 NOTICIAS-NEWS
+
+
+.news-header {
+    padding-top: 5%;
+    text-align: center;
+    font-size: 10vh;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+.sectionhome3{
+padding-top: 5%;
+display: flex;
+justify-content: space-evenly;
+
+.card{
+    width: 27rem;
+}
+
+.card-body{
+    background-color: $colorPrimario;
+}
+
+h5{
+    font-size: 3vh;
+    color: gray;
+    font-weight: bolder;
+}
+
+.card-title{
+    font-size: 5vh;
+    color: #c0392b;
+}
+
+.card-text{
+    font-size: 3vh;
+    font-weight: bolder;
+}
+}
+
+//FIN NOTICIAS NEWS
+
+
+
+
+
+
+//GOOGLE MAP
+
+.googlemap{
+    padding-top: 30px;
+    display: flex;
+
+
+    .map2{
+        width: 100%;
+        height: 400px;
+    }
+}
+//FIN GOOGLE MAP
+
+
+
+//SECCION 6 - CLIENTES
+
+
+.clientes{
+    padding-top: 20px;
+    .partners{
+        display: flex;
+        font-size: 10vh;
+        justify-content: center;
+        font-weight: bolder;
+        color: white;
+    }
+    
+    .divclients{
+        display: flex;
+        background-color: white;
+        justify-content: center;
+        justify-content: space-evenly;
+    
+        div{
+            width: 400px;
+            img{
+                width: 300px;
+                padding-top: 13%;
+            }
+        }
+    }
+}
+
+
+// FIN SECCION CLIENTES
+
+
+
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+
+//FOOTER
+
+footer.section {
+    margin-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    background-color: #221f1f;
+}
+
+footer a:hover {
+    color: #c0392b;
+}
+
+footer a.logo {
+    margin-top: -2.5rem;
+    display: block;
+}
+
+footer a.logo:hover {
+    color: unset;
+}
+
+.social-list {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-item {
+    --size: 30px;
+    height: var(--size);
+    width: var(--size);
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: white;
+    color: #c0392b;
+}
+
+.social-item:hover {
+    background-color: #c0392b;
+    color: white;
+}
+
+.social-item ~ .social-item {
+    margin-left: 20px;
+}
+
+footer .content {
+    margin-top: 20px;
+}
+
+.footer-menu {
+    list-style-type: none;
+}
+
+.footer-menu a {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.footer-menu a:hover {
+    transform: translateX(5px);
+}
+
+//FIN FOOTER
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+// RESPONSIVE 
+
+@media only screen and (max-width: 1280px) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero-slide-item {
+        padding-top: 50%;
+    }
+
+    .item-content-wraper {
+        width: 50%;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .nav-wrapper {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #000000;
+        z-index: 99;}
+
+    .hero-slide-item {
+        height: max-content;
+        padding-top: unset;
+    }
+
+    .item-content-wraper {
+        width: 100%;
+        height: 100%;
+        padding-bottom: 20px;
+        padding-right: 5rem;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-slide-item-content {
+        position: relative;
+    }
+
+    .hero-slide-item img {
+        height: 100%;
+    }
+
+    .item-content-title {
+        font-size: 3rem;
+    }
+
+    .hamburger-menu {
+        display: grid;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        background-color: #000000;
+        flex-direction: column;
+        width: 80%;
+        height: 100vh;
+        padding: 20px;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-menu li {
+        margin: 10px 30px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    main{
+        width: 100%;
+        max-width: 1900px;
+        
+        video{
+            width:100%;
+        }
+    
+        div{
+            width: 100%;
+            max-width: 1700px;
+            position: relative;
+        }
+    
+        h1{
+            position: absolute;
+            padding-left: 15px;
+            bottom: 25px;
+            width: 70%;
+            font-size: 6vh;
+            font-family: 'Rubik', sans-serif;
+    
+    }
+    }
+}
+
+
+
+
+@media only screen and (max-width: 576px) {
+    main{
+        width: 100%;
+        max-width: 1900px;
+        
+        video{
+            width:100%;
+        }
+    
+        div{
+            width: 100%;
+            max-width: 1700px;
+            position: relative;
+        }
+    
+        h1{
+            position: absolute;
+            padding-left: 15px;
+            bottom: 25px;
+            width: 70%;
+            font-size: 4vh;
+            font-family: 'Rubik', sans-serif;
+    
+    }
+    }
+
+    .sectionhome3{
+        padding-top: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        .card{
+            width: 27rem;
+        }
+        
+        .card-body{
+            background-color: $colorPrimario;
+        }
+        
+        h5{
+            font-size: 3vh;
+            color: gray;
+            font-weight: bolder;
+        }
+        
+        .card-title{
+            font-size: 5vh;
+            color: #c0392b;
+        }
+        
+        .card-text{
+            font-size: 3vh;
+            font-weight: bolder;
+        }
+        }
+        
+        
+
+}
+@media only screen and (max-width: 390px) {
+    main{
+        width: 100%;
+        max-width: 1900px;
+        
+        video{
+            width:100%;
+        }
+    
+        div{
+            width: 100%;
+            max-width: 1700px;
+            position: relative;
+        }
+    
+        h1{
+            position: absolute;
+            padding-left: 15px;
+            bottom: 25px;
+            width: 70%;
+            font-size: 3vh;
+            font-family: 'Rubik', sans-serif;
+    
+    }
+    }
+
+
+}
+
+
+//FIN RESPONSIVE
+
+
+//--------------------------------------------------------------------------------------------------------------------
+
+
+//COLUMNAS RESPONSIVE 
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+[class*="col-"] {
+    padding: 0 15px;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1280px) {
+    .col-md-1 {
+        width: 8.33%;
+    }
+
+    .col-md-2 {
+        width: 16.66%;
+    }
+
+    .col-md-3 {
+        width: 25%;
+    }
+
+    .col-md-4 {
+        width: 33.33%;
+    }
+
+    .col-md-5 {
+        width: 41.66%;
+    }
+
+    .col-md-6 {
+        width: 50%;
+    }
+
+    .col-md-7 {
+        width: 58.33%;
+    }
+
+    .col-md-8 {
+        width: 66.66%;
+    }
+
+    .col-md-9 {
+        width: 75%;
+    }
+
+    .col-md-10 {
+        width: 83.33%;
+    }
+
+    .col-md-11 {
+        width: 91.66%;
+    }
+
+    .col-md-12 {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 850px) {
+    .col-sm-1 {
+        width: 8.33%;
+    }
+
+    .col-sm-2 {
+        width: 16.66%;
+    }
+
+    .col-sm-3 {
+        width: 25%;
+    }
+
+    .col-sm-4 {
+        width: 33.33%;
+    }
+
+    .col-sm-5 {
+        width: 41.66%;
+    }
+
+    .col-sm-6 {
+        width: 50%;
+    }
+
+    .col-sm-7 {
+        width: 58.33%;
+    }
+
+    .col-sm-8 {
+        width: 66.66%;
+    }
+
+    .col-sm-9 {
+        width: 75%;
+    }
+
+    .col-sm-10 {
+        width: 83.33%;
+    }
+
+    .col-sm-11 {
+        width: 91.66%;
+    }
+
+    .col-sm-12 {
+        width: 100%;
+    }
+}
+
+
+
