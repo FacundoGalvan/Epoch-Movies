@@ -4,7 +4,7 @@ Esta es mi primera pagina web, se trata de una plataforma que brinda todo tipo d
 
 ## ¿ Como puedo ver la pagina ?
 
-Ingresa al siguiente [link](https://facundogalvancoder.000webhostapp.com/pages/index.html) para verla.
+Ingresa al siguiente [link](https://facundogalvancoder.000webhostapp.com/index.html) para verla.
 
 
 ## Contribucion
